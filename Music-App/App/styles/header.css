@@ -1,0 +1,53 @@
+#header{
+    width: 100%;
+    max-width: 1024px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    & h2{
+        color:var(--white) ;
+
+        & span{
+            color: var(--red);
+        }
+    }
+
+    & nav{
+        display: flex;
+        gap: var(--space-l);
+
+        & a{
+            text-decoration: none;
+            color: var(--white);
+            transition: scale var(--speed-fast);
+        }
+
+        & a:hover{
+            transform: scale(1.2) ;
+            color: var(--red);
+        }
+
+    } 
+    & button{
+        position: relative;
+        outline: none;
+        border: none;
+        height: 2rem;
+        width: 2rem;
+        border-radius: var(--radius-xl);
+        background-image: url(../assets/icons/user.svg);
+        background-size: contain;
+        cursor: pointer;
+    }
+    & button:hover::before{
+        position: absolute;
+        left: 0;
+        bottom: -1rem;
+        content: attr(session-user);
+        background-color: aliceblue;
+    }
+}
+

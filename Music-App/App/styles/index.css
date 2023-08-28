@@ -1,0 +1,91 @@
+@import url(header.css);
+@import url(banner.css);
+@import url(section_data.css);
+@import url(section_form.css);
+@import url(widget_card.css);
+@import url(section_music.css);
+:root{
+
+    /*
+    *   colors define the colors of the site
+    */
+    --blue: #1b004b;
+    --purple: #4c007d;
+    --red: #e34557;
+    --green: #118c8c;
+    --white:#fff;
+    --black:#333;
+
+
+    /*
+    *   space define the spces of the site
+    *   only use in the padding and margin
+    */
+    --space-s:  5px;
+    --space-m:  10px;
+    --space-l:  15px;
+    --space-xl: 20px;
+
+    /*
+    * radius define the radius of the border 
+    */
+    --radius-s:  4px;
+    --radius-m:  8px;
+    --radius-l:  12px;
+    --radius-xl: 50%;
+
+    /*
+    * speed 
+    */
+    --speed-slow: 0.5s;
+    --speed-midium: 0.3s;
+    --speed-fast: 0.2s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'system-ui' ;
+}
+
+body{
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+}
+#app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-m);
+    background: linear-gradient(90deg,var(--blue), var(--purple));
+    color: var(--white);
+}
+section{
+    height: 600px;
+    width: 100%;
+    max-width: 1024px;
+    view-timeline-name: --card;
+    view-timeline-axis: block;
+
+    animation-timeline: --card;
+    animation-name: show;
+
+    animation-range: entry 20% cover 30%;
+    animation-fill-mode: both;
+}
+span{
+    color: var(--red);
+}
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
